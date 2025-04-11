@@ -1,0 +1,366 @@
+/* --- General Styles & Dark Theme --- */
+:root {
+    --bg-dark-primary: #2c3e50;
+    --bg-dark-secondary: #34495e;
+    --text-light: #ecf0f1;
+    --text-muted: #bdc3c7;
+    --accent-color: #e74c3c;
+    --input-bg: #5d6d7e;
+    --border-color: #46637f;
+    --highlight-yellow: #f1c40f;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark-primary);
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 16px; /* Base font size */
+}
+
+/* --- Views --- */
+.view {
+    display: none; /* Hidden by default */
+    padding: 15px;
+    min-height: 100vh;
+}
+.view.active {
+    display: block; /* Show active view */
+}
+
+/* --- Login View --- */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--bg-dark-secondary);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-container h1 {
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.login-container input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: var(--text-light);
+    font-size: 1em;
+    text-align: center;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #c0392b; /* Darker accent */
+}
+
+.error-message {
+    color: var(--accent-color);
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.monitor-list {
+    font-size: 0.85em;
+    color: var(--text-muted);
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+/* --- Main Content View --- */
+#main-content header {
+    background-color: var(--bg-dark-secondary);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 10px;
+}
+
+#main-content header h1 {
+    font-size: 1.4em;
+    color: var(--accent-color);
+    margin: 0;
+}
+#main-content header p {
+     margin: 0;
+     font-size: 0.9em;
+}
+#monitor-display-name {
+    font-weight: bold;
+}
+
+#logoutBtn {
+    padding: 5px 10px;
+    background-color: var(--input-bg);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#logoutBtn:hover {
+    background-color: #7f8c8d;
+}
+
+
+#role-containers-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Role Container Styling --- */
+.role-container {
+    background-color: var(--bg-dark-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.role-container h2 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.3em;
+}
+
+.participant-name-section {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.participant-name-section label {
+    display: block;
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+.participant-name-section input {
+    width: 80%;
+    max-width: 250px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-light);
+    font-size: 0.95em;
+    text-align: center;
+}
+
+.role-container > .description {
+    font-style: italic;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    padding: 0 10px;
+}
+
+/* --- Sections within Container --- */
+.details-section {
+    background-color: var(--bg-dark-primary); /* Slightly darker background for sections */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.details-section h4 {
+    color: var(--highlight-yellow); /* Yellow for section titles */
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+/* Events List */
+.details-section.events ul {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9em;
+}
+.details-section.events li {
+    margin-bottom: 6px;
+    padding-left: 15px;
+    position: relative;
+}
+.details-section.events li::before {
+    content: "⚡"; /* Event icon */
+    position: absolute;
+    left: 0;
+    color: var(--highlight-yellow);
+}
+.details-section.events li strong {
+    color: var(--text-muted);
+    font-weight: bold;
+}
+
+/* Tasks List with Checkboxes */
+.details-section.tasks ul {
+    list-style: none;
+    padding: 0;
+}
+.details-section.tasks li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start; /* Align checkbox with start of text */
+    gap: 8px;
+}
+.details-section.tasks input[type="checkbox"] {
+    flex-shrink: 0;
+    margin-top: 4px; /* Align vertically */
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+    accent-color: var(--accent-color);
+}
+.details-section.tasks label {
+    cursor: pointer;
+    font-size: 0.95em;
+    color: var(--text-light);
+}
+.details-section.tasks input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* Calculator Section */
+.details-section.calculator {
+    text-align: center;
+}
+.details-section.calculator input[type="number"] {
+    width: 60px; /* Fixed width for number inputs */
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-light);
+    font-size: 1em;
+    text-align: center;
+    -moz-appearance: textfield; /* Hide spinners Firefox */
+}
+.details-section.calculator input[type="number"]::-webkit-outer-spin-button,
+.details-section.calculator input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Hide spinners Chrome/Safari */
+    margin: 0;
+}
+.details-section.calculator .difference {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--highlight-yellow);
+    margin-left: 5px;
+}
+
+/* Properties Section */
+.details-section.properties fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.details-section.properties legend {
+    padding: 0 5px;
+    font-weight: bold;
+    color: var(--highlight-yellow);
+    font-size: 1em;
+}
+.details-section.properties div { /* Wrapper for checkbox + label */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+.details-section.properties input[type="checkbox"] {
+     flex-shrink: 0;
+     width: 1.1em;
+     height: 1.1em;
+     cursor: pointer;
+     accent-color: var(--accent-color);
+}
+.details-section.properties label {
+     cursor: pointer;
+     font-size: 0.95em;
+     color: var(--text-light);
+}
+.details-section.properties input[type="checkbox"]:checked + label {
+     text-decoration: line-through;
+     color: var(--text-muted);
+     opacity: 0.7;
+}
+
+
+/* --- Responsiveness --- */
+@media (max-width: 600px) {
+    body {
+        font-size: 15px; /* Adjust base size for mobile */
+    }
+    .login-container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    #main-content header h1 {
+        font-size: 1.2em;
+    }
+    .role-container {
+        padding: 12px;
+    }
+    .role-container h2 {
+         font-size: 1.2em;
+    }
+    .participant-name-section input {
+        width: 90%;
+    }
+    .details-section {
+        padding: 10px;
+    }
+    .details-section h4 {
+        font-size: 1.05em;
+    }
+    /* Adjust task/property label font size if needed */
+     .details-section.tasks label, .details-section.properties label {
+         font-size: 0.9em;
+     }
+}
